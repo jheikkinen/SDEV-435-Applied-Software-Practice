@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warren Buffy Login</title>
+    {% load static %}
+    <link href="{% static 'css/Main.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="{% url 'home' %}">Warren Buffy</a></h1>
+        <a class="login" href=""></a>
+        <a class="menu" href=""></a>
+    </header>
+    <main class="main-home">
+        
+        <div class="budget-calculator-container">
+            <h2 class="PFM-title">Personal Financial Management</h2>
+            <div class="budget-calculator-sort">
+            <!-- Budget Section -->
+                <div class="budget-container">
+                <h3>Budget</h3>
+
+                </div>
+            <!-- Mortgage Calculator Section -->
+                <div class="mortgage-container">
+                <h3>Mortgage Payment Calculator</h3>
+                <a href="{% url 'mortgageCalculator' %}">Calculate Mortgage Payment</a>    
+                </div>
+            </div>
+        </div>
+    </main>   
+    <footer>
+        <ul>
+            
+                <li>Phone: 1-800-BuffyFI</li>
+                <li>City: Ledyard, CT</li>
+                <br>
+
+        </ul>
+    </footer>
+</body>
+</html>

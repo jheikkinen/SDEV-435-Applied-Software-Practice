@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warren Buffy Login</title>
+    {% load static %}
+    <link href="{% static 'css/Main.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="{% url 'home' %}">Warren Buffy</a></h1>
+        <a class="login" href=""></a>
+        <a class="menu" href=""></a>
+    </header>
+    <main class="main-home">
+        <div class="PDIT-container">
+            <h2 class="PDIT-title">Portfolio Development and Investment Tools</h2>
+            <div class="portfolio-tools-container">
+                <div class="portfolio-container">
+
+                </div>
+                <div class="watchlist-tools-container">
+                    <div class="watchlist-container">
+
+                    </div>
+                    <div class="tools-container">
+                        <h3 class="tools-title">Tools</h3>
+                        <a href="{% url 'PortfolioGrowth' %}" class="tool-option">Portfolio Growth Calculator</a>
+                        <a href="{% url 'InvestmentRisk' %}" class="tool-option">Investment Risk Calculator</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>   
+    <footer>
+        <ul>
+            
+                <li>Phone: 1-800-BuffyFI</li>
+                <li>City: Ledyard, CT</li>
+                <br>
+
+        </ul>
+    </footer>
+</body>
+</html>
