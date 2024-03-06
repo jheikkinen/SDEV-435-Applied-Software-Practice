@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django PostgreSQL Example</title>
+</head>
+<body>
+    <h1>Data from PostgreSQL Database</h1>
+    <ul>
+        {% if data %}
+        {% for item in data %}
+            <!-- Your loop content here -->
+        {% endfor %}
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+            <li>{{ item.name }} - {{ item.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
