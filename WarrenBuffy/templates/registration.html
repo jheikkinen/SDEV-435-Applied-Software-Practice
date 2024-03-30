@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block body_block %}
+    <div>
+        {% if registered %}
+            <h1> Thank you for registering!</h1>
+        {% else %}
+            <h1>Register Here!</h1>
+            <h3>Fill out the from: </h3>
+            <!-- Post registration form fields for user registration -->
+            <form method="post">
+                {% csrf_token %}
+                {{ register.as_p }}
+                {{ userRegistration.as_p }}
+                <input type="submit" name="" value="Register">
+            </form>
+
+        {% endif %}
+
+    </div>
+
+{% endblock %}

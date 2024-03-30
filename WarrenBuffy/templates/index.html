@@ -35,15 +35,20 @@
             <fieldset id="login-button">
                 <input type="submit" class="login-button-field" value="Login" >
                 <!-- Temporary link until login capability exists -->>
-                <a href="{% url 'home' %}">Register</a>
+                <a href="{% url 'home' %}">Home Access</a>
+                <a href="{% url 'registration' %}">Register</a>
             </fieldset>
         </form>  
+        <div class="container">
+            {% block body_block %}
+            {% endblock %}
+        </div>
     </main>   
     <footer>
         <ul>
-            {% for user in users %}
-                <li>Phone: {{ user.phone }}</li>
-                <li>City: {{ user.city }}</li>
+            {% for userInfo in users %}
+                <li>Phone: {{ userInfo.phone }}</li>
+                <li>City: {{ userInfo.city }}</li>
                 <br>
             {% endfor %}
         </ul>
