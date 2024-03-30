@@ -15,13 +15,13 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i9zm4_e(9c+z7w&pvl9(dmg%r11ja7v%9o7z67)e&mlt*q+ye%'
+SECRET_KEY = 'django-insecure-this is a secret, you will have your own when you install'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'WarrenBuffy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, TEMPLATE_DIR)],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,10 +79,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'WarrenBuffy',  #/*BASE_DIR /*/
-        'USER': 'use a database user name here',
-        'PASSWORD': 'Create your own Password',
+        'USER': 'username',
+        'PASSWORD': 'Type database password here',
         'HOST': 'localhost',
         'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c search_path=public,Buffy'
+        }
+
     }
 }
 
@@ -90,12 +94,22 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
+
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS':{'min_length':9}
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
