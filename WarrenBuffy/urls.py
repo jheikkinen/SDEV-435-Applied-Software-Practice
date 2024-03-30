@@ -22,8 +22,10 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('registration', views.registrationForm, name='registration' ),
     path('home/', views.home, name='home'),
-    path('PFM/', views.pfm, name='PFM'),
+    path('budgetManagement/', views.budgetManagement, name='budgetManagement'),
+    path('budgetManagementEdit/', views.update_budget_item, name='budgetManagementEdit'),
     path('PDIT/', views.pdit, name='PDIT'),
     path('portfoliogrowth/', views.portfolioGrowth, name='PortfolioGrowth'),
     path('investmentrisk/', views.investmentRisk, name='InvestmentRisk'),
