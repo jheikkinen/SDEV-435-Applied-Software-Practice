@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }    
 
         // Validate the input
-            if (isNaN(propertyValue) || isNaN(propertyTax) || isNaN(homeInsurance) || isNaN(downPayment) || isNaN(interestRate)) {
-                    throw new Error("Invalid input: Not a number");
+            if (propertyValue <= 0 || propertyTax < 0 || homeInsurance < 0 || downPayment < 0 || interestRate <= 0 || isNaN(propertyValue) || isNaN(propertyTax) || isNaN(homeInsurance) || isNaN(downPayment) || isNaN(interestRate)) {
+                    throw new Error("Invalid input: Needs to be a positive number");
                 }
 
 
@@ -56,10 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 let mortgageLoanPayment = propertyValue * ((monthlyInterest * interestMortLengthExp) 
                 / (interestMortLengthExp - 1)) ;
                 let mortgagePayment = mortgageLoanPayment + propertyTax + homeInsurance;
-
-                
-
-
     
                 // Update the results container with the calculated values
                 resultsContainer.innerHTML = `

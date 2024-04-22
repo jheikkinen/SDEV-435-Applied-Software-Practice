@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
             let annualInterest = parseFloat(document.getElementById('annualInterest').value);
 
             // Validate the input
-            if (isNaN(portfolioAmount) || isNaN(numberYears) || isNaN(monthlyContribution) || isNaN(annualInterest)) {
-                throw new Error("Invalid input: Not a number");
+            if (portfolioAmount < 0 || numberYears <= 0 || monthlyContribution < 0 || annualInterest <= 0 || isNaN(portfolioAmount) || isNaN(numberYears) || isNaN(monthlyContribution) || isNaN(annualInterest)) {
+                throw new Error("Invalid input: Needs to be a positive number");
             }
 
             // Perform the calculations

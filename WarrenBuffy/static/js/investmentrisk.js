@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
             let riskPercentage = parseFloat(document.getElementById('riskPercentage').value);
 
             // Validate the input
-            if (isNaN(portfolioAmount) || isNaN(purchasePrice) || isNaN(stopPrice) || isNaN(riskPercentage)) {
-                throw new Error("Invalid input: Not a number");
+            if (portfolioAmount <= 0 || purchasePrice <= 0 || stopPrice <= 0 || riskPercentage <= 0 || isNaN(portfolioAmount) || isNaN(purchasePrice) || isNaN(stopPrice) || isNaN(riskPercentage)) {
+                throw new Error("Invalid input: Needs to be a positive number");
             }
 
             // Perform the calculations
