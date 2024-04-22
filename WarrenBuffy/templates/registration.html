@@ -1,19 +1,20 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block body_block %}
-    <div>
+    <div class="registration-container">
         {% if registered %}
-            <h1> Thank you for registering!</h1>
+        <div class="center-form"><h1> Thank you for registering!</h1></div>
         {% else %}
-            <h1>Register Here!</h1>
-            <h3>Fill out the from: </h3>
+            <div class="center-form"><h1>Register Here!</h1></div>
             <!-- Post registration form fields for user registration -->
             <form method="post">
                 {% csrf_token %}
-                {{ register.as_p }}
-                {{ userRegistration.as_p }}
-                <input type="submit" name="" value="Register">
+                <div class="center-fields"><div class="center-fields-column">{{ register.as_p }}</div></div>
+                <div class="center-fields"><div class="center-fields-column">{{ userRegistration.as_p }}</div></div>
+                <div class="center-buttons">
+                    <div class="center-form"><input class="buttons text" type="submit" name="" value="Register"></div>
+                </div>
             </form>
 
         {% endif %}

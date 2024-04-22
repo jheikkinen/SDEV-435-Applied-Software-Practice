@@ -1,35 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warren Buffy Login</title>
-    {% load static %}
-    <link href="{% static 'css/Main.css' %}" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <header>
-        <h1 class="logo"><a href="{% url 'home' %}">Warren Buffy</a></h1>
-        <a class="login" href=""></a>
-        <a class="menu" href=""></a>
-    </header>
-    <main class="main-home">        
-        <div class="budget-calculator-container">
-            <form method="post" > <!--action="{% url 'budgetManagement' %}"-->
-                {{ form.as_p }}  <!-- Renders the form as paragraph elements -->
-                {% csrf_token %}
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="hidden" name="next" value="{{ next }}" />
-            </form>                
-    </main>   
-    <footer>
-        <ul>
-            
-                <li>Phone: 1-800-BuffyFI</li>
-                <li>City: Ledyard, CT</li>
-                <br>
+{% extends 'base.html' %}
+{% load static %}
 
-        </ul>
-    </footer>
-</body>
-</html>
+{% block body_block %}        
+        <div class="budget-edit-container">
+            <div class="center-form">
+            <form method="post" > 
+                <div class="center-fields"><div class="center-fields-column">{{ form.as_p }}</div></div>
+                {% csrf_token %}
+                <div class="center-buttons">
+                    <div class="center-form"><button class="buttons text" type="submit"><p>Submit</p></button></div>
+                </div>
+                <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+        </div>
+        </div>                
+{% endblock %}

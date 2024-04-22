@@ -1,57 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warren Buffy Login</title>
-    {% load static %}
-    <link href="{% static 'css/Main.css' %}" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <header>
-        <h1 class="logo"><a href="">Warren Buffy</a></h1>
-        <a class="login" href=""></a>
-        <a class="menu" href=""></a>
-    </header>
-    <main>
-        <form class="login-container" action="post">
-            <legend class="login-legend">Login</legend>
-            <fieldset id="login-Section">
-            <ul class="login-ul">
-                <li>
-                    <label for="firstName">Email:</label>
-                </li>
-                <input type="text" class="input" id="email" name="email" 
-                minlength="1" maxlength="32" required>
-            </ul>
-            <ul class="login-ul">
-                <li>
-                    <label for="lastName">Password:</label>
-                </li>
-                <input type="password" class="input" id="password" name="password"
-                minlength="8" maxlength="32" required>
-            </ul>
-            </fieldset>
-            <fieldset id="login-button">
-                <input type="submit" class="login-button-field" value="Login" >
-                <!-- Temporary link until login capability exists -->>
-                <a href="{% url 'home' %}">Home Access</a>
-                <a href="{% url 'registration' %}">Register</a>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+        <form class="index-container" method="post">
+            <legend class="login-title">Login</legend>
+            <p class="login-p">If you are a member of Warren Buffy please log in.</p>
+            <p class="login-p">If you are a first-time user, select the register button to use our famous financial tools.</p>
+            <fieldset id="login-buttons">                
+                {% if user.is_authenticated %}
+                <a class="login" class="logout-link" href="{% url 'logout' %}"><div class="centering-text"><p>Logout</p></div></a>
+                {% else %}
+                <a class="login" href="{% url 'login' %}"><div class="centering-text"><p>Login</p></div></a>
+                {% endif %}
+                <a class="login" href="{% url 'registration' %}"><div class="centering-text"><p>Register</p></div></a>
             </fieldset>
         </form>  
-        <div class="container">
-            {% block body_block %}
-            {% endblock %}
-        </div>
-    </main>   
-    <footer>
-        <ul>
-            {% for userInfo in users %}
-                <li>Phone: {{ userInfo.phone }}</li>
-                <li>City: {{ userInfo.city }}</li>
-                <br>
-            {% endfor %}
-        </ul>
-    </footer>
-</body>
-</html>
+{% endblock %}

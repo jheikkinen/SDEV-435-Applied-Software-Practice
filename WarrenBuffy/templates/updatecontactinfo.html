@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+    <div class="contact-info-container"> 
+    <div class="center-form"><h1>Change Profile Contact Information</h1></div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="center-fields"><div class="center-fields-column">{{ user_contact_form.as_p }}</div></div>
+        <div class="center-fields"><div class="center-fields-column">{{ user_info_form.as_p }}</div></div>
+        <div class="center-buttons">
+        <div class="center-form"><button class="buttons" type="submit"><p>Submit</p></button></div>
+        </div>
+    </form>
+    </div>
+{% endblock %}

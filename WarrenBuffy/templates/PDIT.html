@@ -1,39 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warren Buffy Login</title>
-    {% load static %}
-    <link href="{% static 'css/Main.css' %}" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <header>
-        <h1 class="logo"><a href="{% url 'home' %}">Warren Buffy</a></h1>
-        <a class="login" href=""></a>
-        <a class="menu" href=""></a>
-    </header>
-    <main class="main-home">
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
         <div class="PDIT-container">
-            <h2 class="PDIT-title">Financial Tools</h2>
+            <div class="center-fields"><h2 class="PDIT-title">Financial Tools</h2></div>
                     <div class="tools-container">
-                        <h3 class="tools-title">Tools</h3>
-                        <a href="{% url 'PortfolioGrowth' %}" class="tool-option">Portfolio Growth Calculator</a>
-                        <a href="{% url 'InvestmentRisk' %}" class="tool-option">Investment Risk Calculator</a>                             
-                        <a href="{% url 'mortgageCalculator' %}" class="tool-option">Mortgage Payment Calculator</a>                        
+                        <a class="tool-card" href="{% url 'PortfolioGrowth' %}" class="tool-option">
+                            <img src="{% static 'images/coin-investment-returns.jpg' %}" class="card-img">
+                            <div class="title-container"> 
+                                <p class="card-title">Portfolio Growth Calculator</p>
+                            </div>
+                        </a>
+                        <a class="tool-card" href="{% url 'InvestmentRisk' %}" class="tool-option">
+                            <img src="{% static 'images/risk-tolerance-writing.jpg' %}" class="card-img">
+                            <div class="title-container"> 
+                                <p class="card-title">Investment Risk Calculator</p>
+                            </div>
+                        </a>                             
+                        <a class="tool-card" href="{% url 'mortgageCalculator' %}" class="tool-option">
+                            <img src="{% static 'images/149874.png' %}" class="card-img">
+                            <div class="title-container"> 
+                                <p class="card-title">Mortgage Payment Calculator</p>
+                            </div>
+                        </a>                        
                     </div>
                 </div>
             </div>
         </div>
-    </main>   
-    <footer>
-        <ul>
-            
-                <li>Phone: 1-800-BuffyFI</li>
-                <li>City: Ledyard, CT</li>
-                <br>
-
-        </ul>
-    </footer>
-</body>
-</html>
+{% endblock %}

@@ -1,72 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warran Buffy - Investment Risk Calculator</title>
-    {% load static %}
-    <link href="{% static 'css/Main.css' %}" rel="stylesheet" type="text/css">
-    <script src="{% static 'js/investmentrisk.js' %}"></script>
-</head>
-<body>
-    <header>
-        <h1 class="logo"><a href="{% url 'home' %}">Warren Buffy</a></h1>
-        <a class="login" href=""></a>
-        <a class="menu" href=""></a>
-    </header>
-    <main>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
         <!-- Investment Calculator Form -->
-        <form class="login-container" action="post">
-            <legend class="login-legend">Investment Risk Calculator</legend>
-            <fieldset id="login-Section">
+        <form class="investment-container" action="post">
+            <div class="center-fields"><h2 class="calculator-title">Investment Risk Calculator</h2></div>
+            <fieldset id="calculator-Section">
             <!-- Portfolio Amount Field -->
-            <ul class="login-ul">
-                <li>
-                    <label for="portfolioAmount">Portfolio Amount ($):</label>
-                </li>
+            <div class="center-fields">
+                <label for="portfolioAmount">Portfolio Amount ($):</label>
                 <input type="number" class="input" id="portfolioAmount" name="portfolioAmount" 
                 minlength="1" maxlength="18" min="1" required>
-            </ul>
+            </div>
             <!-- Purchase Price Field -->
-            <ul class="login-ul">
-                <li>
-                    <label for="purchasePrice">Purchase Price of Investment ($ per unit): </label>
-                </li>
+            <div class="center-fields">
+                <label for="purchasePrice">Purchase Price of Investment ($ per unit): </label>
                 <input type="number" class="input" id="purchasePrice" name="purchasePrice"
                 minlength="1" maxlength="8" min="1" required>
-            </ul>
+            </div>
             <!-- Stop Price Field -->
-            <ul class="login-ul">
-                <li>
-                    <label for="stopPrice">Stop Loss Price of Investment($ per unit): </label>
-                </li>
+            <div class="center-fields">
+                <label for="stopPrice">Stop Loss Price of Investment($ per unit): </label>
                 <input type="number" class="input" id="stopPrice" name="stopPrice"
                 minlength="1" maxlength="8" min="1" required>
-            </ul>
+            </div>
             <!-- Risk Percentage Field -->
-            <ul class="login-ul">
-                <li>
-                    <label for="riskPercentage">Risk Percentage (%): </label>
-                </li>
+            <div class="center-fields">
+                <label for="riskPercentage">Risk Percentage (%): </label>
                 <input type="number" class="input" id="riskPercentage" name="riskPercentage"
                 minlength="1" maxlength="3" min="1" max="20" required>
-            </ul>
+            </div>
             </fieldset>
             <!-- Calculate Button -->
-            <fieldset id="login-button">
-                <input type="submit" class="login-button-field" value="Calculate" id="calculate-button" >
-            </fieldset>
-            <div id="investment-risk-container" class="results-container"></div>
+            <fieldset id="calculate-button">
+                <div class="center-buttons"><input type="submit" class="buttons align" value="Calculate" id="calculate-button" ></div>
+                <div id="investment-risk-container" class="results-container"></div>
+            </fieldset>            
         </form>  
-    </main>   
-    <footer>
-        <ul>
-            
-            <li>Phone: 1-800-BuffyFI</li>
-            <li>City: Ledyard, CT</li>
-            <br>
-
-    </ul>
-    </footer>
-</body>
-</html>
+        <script src="{% static 'js/investmentrisk.js' %}"></script>
+{% endblock %}

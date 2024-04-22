@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+    <div class="user-setting-container">    
+        <div class="center-buttons"><h1>User Profile Settings</h1></div>    
+        <div class="center-buttons">
+            <a class="buttons" href="{% url 'updatecontactinfo' %}"><div class="centering-text"><p>Update User Contact Info</p></div></a>
+        </div>
+        <div class="center-buttons">
+            <a class="buttons" href="{% url 'passwordchange' %}"><div class="centering-text"><p>Change Password</p></div></a>
+        </div>
+    </div>
+
+{% endblock %}

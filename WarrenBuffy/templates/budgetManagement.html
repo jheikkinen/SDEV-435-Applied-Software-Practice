@@ -1,39 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warren Buffy Login</title>
-    {% load static %}
-    <link href="{% static 'css/Main.css' %}" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <header>
-        <h1 class="logo"><a href="{% url 'home' %}">Warren Buffy</a></h1>
-        <a class="login" href=""></a>
-        <a class="menu" href=""></a>
-    </header>
-    <main class="main-home">
-        
+{% extends 'base.html' %}
+
+{% block body_block %}
+<div class="budget-calculator-center">    
         <div class="budget-calculator-container">
             <h2 class="PFM-title">Budget Management</h2>
             <div class="budget-calculator-sort">
             <!-- Budget Section -->
                 <div class="budget-container">
-                <h3>Budget</h3>             
-                <a href="{% url 'budgetManagementEdit' %}">Edit Budget</a>
-                
+                <div class="budget-title-button">
+                    <h3>Budget</h3>             
+                    <div class="center-form">
+                        <a class="buttons" href="{% url 'budgetManagementEdit' %}"><p>Edit Budget</p></a>
+                    </div>    
+                </div>
                     <div class="budget-heading">
                         <h3>Net Income</h3>
                     </div>
                     <div class="budget-item">
                         <h4>Income After Taxes</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Annual Amount &#40;&#36;&#41;&#58; </p>
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.income }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.income }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <!-- Home Expenses Section -->
                     <div class="budget-heading">
@@ -41,30 +31,30 @@
                     </div>
                     <div class="budget-item">
                         <h4>Mortgage/Rent (This includes property tax and insurance)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
-                            {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.mortgage }}</li>
-                            {% endfor %}
-                        </ul>
+                        <div class="budget-amount-container">
+                                <p class="budget-amount">Monthly Amount &#40;&#36;&#41;&#58; </p>
+                                {% for budgetItems in budgetItem %}
+                                <p class="budget-amount-number">{{ budgetItems.mortgage }}</p>
+                                {% endfor %}                           
+                        </div>
                     </div>
                     <div class="budget-item">
                         <h4>Utility Expenses (Electric/Water Bill, Garbage, Internet, etc.)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount &#40;&#36;&#41;&#58;</p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.utility }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.utility }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <div class="budget-item">
                         <h4>Home Maintenance/Repairs and Other Home Expenses</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58;</p>
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.homeMaintenance }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.homeMaintenance }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <!-- Transportation Section -->
                     <div class="budget-heading">
@@ -72,21 +62,21 @@
                     </div>
                     <div class="budget-item">
                         <h4>Auto Payments (Loan, Lease, and/or Insurance)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.auto }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.auto }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <div class="budget-item">
                         <h4>Other Transportation Expenses (Fuel, Maintenance, etc.)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.transportation }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.transportation }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <!-- Living Expenses Section -->
                     <div class="budget-heading">
@@ -94,48 +84,48 @@
                     </div>
                     <div class="budget-item">
                         <h4>Groceries/Restaurants/Take-out</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.food }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.food }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <div class="budget-item">
                         <h4>Clothing</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.clothing }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.clothing }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <div class="budget-item">
                     <h4>Entertainment Expenses</h4>
-                    <p class="budget-amount">Amount ($): </p>
-                    <ul>
-                        {% for budgetItems in budgetItem %}
-                        <li>{{ budgetItems.entertainment }}</li>
-                        {% endfor %}
-                    </ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>
+                            {% for budgetItems in budgetItem %}
+                            <p class="budget-amount-number">{{ budgetItems.entertainment }}</p>
+                            {% endfor %}
+                        </div>
                     </div>
                     <div class="budget-item">
                         <h4>Child Care Expenses (Education, Daycare, etc.)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.childCare }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.childCare }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <div class="budget-item">
                         <h4>Other Living Expenses (Hygiene, Vacations, etc.)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.living }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.living }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <!-- Medical Expenses Section -->
                     <div class="budget-heading">
@@ -143,21 +133,21 @@
                     </div>
                     <div class="budget-item">
                         <h4>Insurance (Medical, Dental, etc.)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.insurance }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.insurance }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <div class="budget-item">
                         <h4>Other Medical Expenses (Medical Bills, Medications, etc.)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.medical }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.medical }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <!-- Savings/Debt Section -->
                     <div class="budget-heading">
@@ -165,34 +155,33 @@
                     </div>
                     <div class="budget-item">
                         <h4>Savings (Savings Account, 401K, etc.)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.savings }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.savings }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <div class="budget-item">
                         <h4>Debt Payments (Credit Cards, Loans, etc.)</h4>
-                        <p class="budget-amount">Amount ($): </p>
-                        <ul>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Monthly Amount&#40;&#36;&#41;&#58; </p>                        
                             {% for budgetItems in budgetItem %}
-                            <li>{{ budgetItems.debt }}</li>
+                            <p class="budget-amount-number">{{ budgetItems.debt }}</p>
                             {% endfor %}
-                        </ul>
+                        </div>
+                    </div>
+                    <div class="budget-item-total">
+                        <h4>Budget Surplus/Deficit:</h4>
+                        <div class="budget-amount-container">
+                            <p class="budget-amount">Annual Amount &#40;&#36;&#41;&#58; </p>                        
+                            {% for budgetItems in budgetItem %}
+                            <p class="budget-amount-number">{{ budgetItems.total }}</p>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>   
-    <footer>
-        <ul>
-            
-                <li>Phone: 1-800-BuffyFI</li>
-                <li>City: Ledyard, CT</li>
-                <br>
-
-        </ul>
-    </footer>
-</body>
-</html>
+    </div>
+        {% endblock %}

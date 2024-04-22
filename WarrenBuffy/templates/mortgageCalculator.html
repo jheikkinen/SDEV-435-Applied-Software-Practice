@@ -1,104 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mortgage Payment Calculator</title>
-        {% load static %}
-        <link href="{% static 'css/Main.css' %}" rel="stylesheet" type="text/css">
-        <script src="{% static 'js/mortgageCalculator.js' %}"></script>
-    </head>
-<body>
-    <header>
-        <h1 class="logo"><a href="{% url 'home' %}">Warren Buffy</a></h1>
-        <a class="login" href=""></a>
-        <a class="menu" href=""></a>
-    </header>
-    <main class="main-home">
-    
+{% extends 'base.html' %}
+{% load static %}
 
-    
+{% block body_block %}
     <!-- Mortgage Calculator Section -->
         <div class="mortgage-container">
-            <h1>This is your mortgage payment.</h1>
             <!-- Mortgage Calculator Form -->
             <form class="mortgage-calc-container" action="post">
-                <legend class="mortgage-calc-legend">Mortgage Payment Calculator</legend>
-                <fieldset id="form-Section">
+                <div class="center-fields"><h2 class="calculator-title">Mortgage Payment Calculator</h2></div>
+                <fieldset id="calculator-Section">
                 <!-- Property Value Field -->
-                <ul class="property-value-ul">
-                    <li>
-                        <label for="property-value">Property Value:</label>
-                    </li>
-                    <p class="unit-label">Amount ($): </p>
+                <div class="center-fields">
+                    <label for="property-value">Property Value - Amount ($):</label>
                     <input type="number" class="input" id="propertyValue" name="propertyValue" 
                     minlength="1" maxlength="15" min="1" required>
-                </ul>
+                </div>
                 <!-- Property Tax Field -->
-                <ul class="property-tax-ul">
-                    <li>
-                        <label for="property-tax">Property Tax:</label>
-                    </li>
-                    <p class="unit-label">Amount ($): </p>
+                <div class="center-fields">
+                    <label for="property-tax">Property Tax - Amount ($):</label>
                     <input type="number" class="input" id="propertyTax" name="propertyTax"
                     minlength="1" maxlength="8" min="1" required>
-                </ul>
+                </div>
                 <!-- Home Insurance Field -->
-                <ul class="home-insurance-ul">
-                    <li>
-                        <label for="home-insurance">Home Insurance:</label>
-                    </li>
-                    <p class="unit-label">Amount ($): </p>
+                <div class="center-fields">
+                    <label for="home-insurance">Home Insurance - Amount ($):</label>
                     <input type="number" class="input" id="homeInsurance" name="homeInsurance"
                     minlength="1" maxlength="8" min="1" required>
-                </ul>
+                </div>
                 <!-- Down Payment Field -->
-                <ul class="down-payment-ul">
-                    <li>
-                        <label for="down-payment">Down Payment:</label>
-                    </li>
-                    <p class="unit-label">Percent (%): </p>
+                <div class="center-fields">
+                    <label for="down-payment">Down Payment - Percent (%):</label>
                     <input type="number" class="input" id="downPayment" name="downPayment"
                     minlength="1" maxlength="3" min="0" required>
-                </ul>
+                </div>
                 <!-- Interest Rate Field -->
-                <ul class="interest-rate-ul">
-                    <li>
-                        <label for="interest-rate">Interest Rate: </label>
-                    </li>
-                    <p class="unit-label">Percent (%): </p>
+                <div class="center-fields">
+                    <label for="interest-rate">Interest Rate - Percent (%): </label>
                     <input type="number" class="input" id="interestRate" name="interestRate"
                     minlength="1" maxlength="3" min="0" required>
-                </ul>
+                </div>
                 <!-- Length Of Mortgage Radio Buttons -->
-                <ul class="mortgage-length-ul">
-                    <li>
+                <div class="center-fields">
                         <label for="mortgage-length">Length of Mortgage: </label>
-                    </li>
+  
                     <p class="number-years">15-Year: </p>
                     <input type="radio" class="input" id="fifteenYear" name="mortgageLength"
                     value="15">
                     <p class="number-years">30-Year: </p>
                     <input type="radio" class="input" id="thirtyYear" name="mortgageLength"
                     value="30">
-                </ul>
+                </div>
                 </fieldset>
                 <!-- Calculate Button-->
                 <fieldset id="calculate-button">
-                    <input type="submit" class="calculate-button-field" value="calculate-button">
+                    <div class="center-buttons"><input type="submit" class="buttons align" value="calculate-button"></div>
                 </fieldset>
             </form>  
             <div id="mortgage-payment-container" class="results-container"></div>
         </div>
-    </main>
-    <footer>
-        <ul>
-            
-                <li>Phone: 1-800-BuffyFI</li>
-                <li>City: Ledyard, CT</li>
-                <br>
-
-        </ul>
-    </footer>
-</body>
-</html>
+        <script src="{% static 'js/mortgageCalculator.js' %}"></script>
+{% endblock %}
