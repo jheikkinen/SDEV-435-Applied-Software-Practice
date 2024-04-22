@@ -4,90 +4,366 @@ html {
     background-color: black;
 }
 body {
-    background-color: white;
+    background-color: rgb(199, 194, 194);
 }
 header {
+    background-color: rgb(149, 86, 149);
     display: flex;
     flex-direction: row;
     border-bottom: solid;
+    box-shadow:  0em 0.7em 0.7em -0.4em black;
 }
 
+footer {
+    display: flex;
+    flex-direction: row;
+    background-color: black;   
+    padding-top: 100px;
+    padding-left: 35%;
+}
+
+.footer-company-info {
+    padding-top: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer p {
+    color: white;
+}
+
+.footer-logo > a {
+    height: 10%;
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer-logo {
+    margin-left: 3%;
+    margin-right: 5%;
+}
+
+/* Logo when logged in */
 .logo > a {
     height: 10%;
     text-decoration: none;
-    color: limegreen;
+    color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+/* Log when logged out */
 .logo {
     margin-left: 3%;
     margin-right: 70%;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/* Login Screen Styles */
-.login {
-    height: 20px;
-    width: 20px;
-    color: black;
-    background-color: black;
-    margin-top: 2%;
-}
-.menu {
-    height: 20px;
-    width: 20px;
-    color: black;
-    background-color: black;
-    margin-top: 2%;
-    margin-left: 3%;
-}
-.login-container {
-    background-color: limegreen;
+.index-container {
+    background-color: rgb(149, 86, 149);
     border: solid;
     border-radius: 10px;
     margin-top: 15%;
     margin-left: 30%;
     margin-right: 30%;
+    margin-bottom: 10%;
+    height: 250px;
+    width: 300px;
 }
-.login-legend {
+
+/* Reusable Form Styles */
+
+.center-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center-form > p, .center-form > h1, .center-form > button {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.center-form button p {
+    color: white;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.center-fields-column p .helptext {
+    font-size: 0px; /* Hides the help text that Django produces */
+}
+
+.center-form .text {
+    color: white;
+    border: black;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.center-buttons{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.center-fields{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.center-fields-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center-fields-column p{
+    color:black !important;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 30px;
+    width: 200px;
     color: black;
+    text-decoration: none;
+    background-color: black;
+    border: solid;
+    border-radius: 10px;
+    margin-top: 8%;
+    padding-bottom: 10px;
+    box-shadow:  0em 0.7em 0.7em -0.4em black;
+}
+.buttons:hover {
+    position: relative;
+    bottom: 5px;
+    background-color: rgb(62, 61, 62);
+    box-shadow:  0em 0.7em 0.7em -0.4em lightgray;
+    cursor: pointer;
+}
+
+/* Registration Form Styles */
+
+.registration-container {
+    background-color: rgb(149, 86, 149);
+    border: solid;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 5%;
+    padding-bottom: 2%;
+    height: auto;
+    width: 600px;
+}
+
+/* Login Screen Styles */
+.login {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 30px;
+    width: 100px;
+    color: black;
+    text-decoration: none;
+    background-color: black;
+    border: solid;
+    border-radius: 10px;
+    margin-top: 1%;
+    padding-bottom: 10px;
+    box-shadow:  0em 0.7em 0.7em -0.4em black;
+}
+.login:hover {
+    position: relative;
+    bottom: 5px;
+    background-color: rgb(62, 61, 62);
+    box-shadow:  0em 0.7em 0.7em -0.4em lightgray;
+    cursor: pointer;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 30px;
+    width: 120px;
+    color: black;
+    text-decoration: none;
+    background-color: black;
+    border: solid;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 2%;
+    padding-bottom: 10px;
+    box-shadow:  0em 0.7em 0.7em -0.4em black;
+}
+.menu:hover {
+    position: relative;
+    bottom: 5px;
+    background-color: rgb(62, 61, 62);
+    box-shadow:  0em 0.7em 0.7em -0.4em lightgray;
+    cursor: pointer;
+}
+.centering-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.centering-text p {
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 3%;
+}
+.login-container {
+    background-color: rgb(149, 86, 149);
+    border: solid;
+    border-radius: 10px;
+    margin-top: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+    height: 250px;
+    width: 400px;
+}
+
+.login-title {
+    color: white;
     font-weight: bold;
     font-size: 16pt;
 }
+.login-p {
+    color: white;
+    margin-top: 5%;
+}
+
+
 .login-ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+#login-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 90%;
+    border: none;
+}
 input {
     max-width: 200px;
 }
+
+.align {
+    padding-top: 8px;
+    color: white !important;
+    border: black !important;
+}
+
+/* User Settings */
+
+.user-setting-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(149, 86, 149);
+    border: solid;
+    border-radius: 10px;
+    margin-top: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+    height: 250px;
+    width: 300px;
+}
+
+
+/* Update Contact Info Styles */
+
+.contact-info-container {
+    background-color: rgb(149, 86, 149);
+    border: solid;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 5%;
+    padding-bottom: 2%;
+    height: auto;
+    width: 600px;
+}
+
+/* Change Password Styles */
+.change-password-container {
+    background-color: rgb(149, 86, 149);
+    border: solid;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 5%;
+    height: 300px;
+    width: 600px;
+}
+
 /* Home Styles*/
 .main-home {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+}
+.card-container {
+    
+    padding-right: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 .card {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: limegreen;
-    height: 500px;
+    background-color: rgb(149, 86, 149);
+    height: 450px;
     width: 400px;
-    margin-left: 10%;
     margin-top: 10%;
-    margin-right: 10%;
+    margin-right: 22%;
     margin-bottom: 20%;
     border-radius: 10px;
-    
+    border: solid;
+    text-decoration: none;
+    box-shadow:  0em 0.7em 0.7em -0.4em black;
+}
+
+.card:hover {
+    position: relative;
+    bottom: 10px;
+    background-color: rgb(156, 119, 156);
+    box-shadow:  0em 0.7em 0.7em -0.4em lightgray;
+    cursor: pointer;
 }
 .card-img {
-    margin-top: 10px;
+    margin-top: 30px;
     max-width: 400px;
     height: auto;
 }
+.title-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    min-width: 100%;
+}
 .card-title {
     color: white;
+    font-weight: bold;
     text-decoration: none;
     font-size: 16pt;
+    margin-top: 35px;
 }
 
 /*Personal Financial Management Page*/
@@ -97,34 +373,12 @@ input {
     flex-direction: row;
 }
 
-.budget-calculator-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.budget-calculator-sort {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
 .PFM-title {    
     font-weight: bold;
     font-size: 16pt;
     margin: 20px 300px 20px 300px
 }
 
-.budget-container {
-    width: 70%;
-    height: 100%;
-    border: solid;
-}
-
-.mortgage-container {
-    display: flex;
-    flex-direction: column;
-    border: solid;
-    width: 30%;
-}
 
 label {
     font-weight: bold;
@@ -139,40 +393,43 @@ label {
     height: 800px;
 }
 
-.portfolio-tools-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-}
-
-.portfolio-container {
-    width: 70%;
-    border: solid;
-}
-
-.watchlist-tools-container {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    border: solid;
-}
-
-.watchlist-container {
-    width: 100%;
-    height: 70%;
-    border: solid;
-}
-
 .tools-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content:left;
     width: 100%;
     border: solid;
+    padding-left: 5%;
+    padding-right: 5%;
+    border: none;
+}
+
+.tool-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(149, 86, 149);
+    height: 450px;
+    width: 400px;
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+    border-radius: 10px;
+    border: solid;
+    text-decoration: none;
+    box-shadow:  0em 0.7em 0.7em -0.4em black;
+}
+
+.tool-card:hover {
+    position: relative;
+    bottom: 10px;
+    background-color: rgb(156, 119, 156);
+    box-shadow:  0em 0.7em 0.7em -0.4em lightgray;
+    cursor: pointer;
 }
 
 .tools-title {
-    background-color: limegreen;
+    background-color: rgb(149, 86, 149);
     color: white;
     width: 100%;
     padding: 15px 0px 15px 0px;
@@ -187,24 +444,218 @@ label {
     border: solid;
 }
 
-/* Budget Section*/
+/* Calculator Styles */
+
+.calculator-title {
+    color: white;
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+#calculator-Section {
+    border: none;
+}
+
+#calculate-button {
+    border: none;
+}
+
+.portfolio-container {
+    background-color: rgb(149, 86, 149);
+    border: solid;
+    border-radius: 10px;
+    margin-top: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+    height: auto;
+    width: 400px;
+}
+
+#portfolio-growth-container {
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+#portfolio-growth-container p{
+    font-weight: bold;
+}
+
+.investment-container{
+    background-color: rgb(149, 86, 149);
+    border: solid;
+    border-radius: 10px;
+    margin-top: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+    height: auto;
+    width: 500px;
+}
+
+#investment-risk-container{
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+#investment-risk-container p{
+    font-weight: bold;
+}
+
+.mortgage-container{
+    background-color: rgb(149, 86, 149);
+    border: solid;
+    border-radius: 10px;
+    margin-top: 15%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10%;
+    height: auto;
+    width: 600px;
+}
+
+#mortgage-payment-container{
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+#mortgage-payment-container p{
+    font-weight: bold;
+}
+
+/* Budget Section */
+
+.budget-calculator-center {
+    padding-left: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.budget-calculator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.budget-calculator-container h2 {
+    margin-left: 40%;
+}
+
+.budget-edit-container{
+    background-color: rgb(149, 86, 149);
+    border: solid;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 5%;
+    padding-bottom: 2%;
+    height: auto;
+    width: 600px;
+}
+
+.budget-title-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.budget-title-button h3 {
+    margin-left: 3%;
+    font-size: 18pt;
+}
+
+.budget-title-button .center-form {
+    margin-right: 2%;
+    margin-bottom: 1%;
+}
+
+.budget-title-button .center-form .buttons {
+    color: white;
+    border: black;
+    font-weight: bolder;
+    padding-bottom: 16px;
+    padding-top: -25px;
+}
+
+.budget-container {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 100%;
+    height: 100%;
+    border: solid;
+}
+
+
+.budget-calculator-sort {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
 
 .budget-heading {
     display: flex;
     flex-direction: row;
-    background-color: limegreen;
-    width: 100%;
+    background-color: rgb(149, 86, 149);
+    width: 97.8%;
     border: solid;
     padding-left: 2%;
+}
+
+.budget-heading h3 {
+    color: rgb(220, 215, 215);
+    font-size: 14pt;
 }
 
 .budget-item {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     border: solid;
+    width: 97.8%;
     padding-left: 2%;
 }
 
+.budget-item p {
+    margin-left: 5%;
+}
+
+.budget-item h4 {
+    margin-left: 5%;
+}
+
+.budget-item-total{
+    color: rgb(220, 215, 215);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid black;
+    font-weight: bold;
+    font-size: 14pt;
+    width: 97.8%;
+    padding-left: 2%;
+    background-color: rgb(149, 86, 149);
+}
+
+.budget-amount-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 20%;
+    width: 18%;
+}
+
 .budget-amount {
-    margin-left: 50%;
+    font-weight: bold;
+        
+}
+
+.budget-amount-number{
+    margin-left: 5%;
 }
