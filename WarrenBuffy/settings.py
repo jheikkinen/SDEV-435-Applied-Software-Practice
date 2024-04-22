@@ -21,7 +21,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-i9zm4_e(9c+z7w&pvl9(dmg%r11ja7v%9o7z67)e&mlt*q+ye%'
+SECRET_KEY = 'get your own key when you install this app'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'WarrenBuffy',  #/*BASE_DIR /*/
         'USER': 'postgres',
-        'PASSWORD': 'Fcwplddg110!',
+        'PASSWORD': 'your password for postgre',
         'HOST': 'localhost',
         'PORT': '5432',
         'OPTIONS': {
