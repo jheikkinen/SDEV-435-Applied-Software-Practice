@@ -21,7 +21,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-this is a secret, you will have your own when you install'
+SECRET_KEY = 'django-insecure-i9zm4_e(9c+z7w&pvl9(dmg%r11ja7v%9o7z67)e&mlt*q+ye%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'WarrenBuffy',  #/*BASE_DIR /*/
-        'USER': 'username',
-        'PASSWORD': 'Type database password here',
+        'USER': 'postgres',
+        'PASSWORD': 'Fcwplddg110!',
         'HOST': 'localhost',
         'PORT': '5432',
         'OPTIONS': {
@@ -136,9 +136,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static/css/'
+STATIC_ROOT = r'C:\Users\heikk\WarrenBuffy\WarrenBuffy\static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/template/login.html'
+LOGIN_REDIRECT_URL = '/'
